@@ -1,0 +1,29 @@
+<div class="container mt-4">
+    <mat-card class="emergency-card">
+      <mat-card-header>
+        <mat-card-title>Emergency Features</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <button mat-raised-button color="warn" class="emergency-button" (click)="locatePatient()">Locate Patient</button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card class="mt-4">
+      <mat-card-header>
+        <mat-card-title>Emergency Contacts</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="list-group">
+          <div *ngFor="let contact of emergencyContacts" class="list-group-item">
+            <h5 class="mb-1">{{ contact.name }}</h5>
+            <p class="mb-1">Phone: {{ contact.phone }}</p>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

@@ -1,0 +1,25 @@
+<p>daily-care-plan works!</p>
+<mat-card class="care-plan-card">
+    <mat-card-title>Daily Care Plan</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="carePlanForm" (ngSubmit)="addTask()">
+        <mat-form-field class="full-width">
+          <mat-label>New Task</mat-label>
+          <input matInput formControlName="task">
+          <mat-error *ngIf="carePlanForm.get('task')?.hasError('required')">
+            Task is required
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Add Task</button>
+      </form>
+      <div class="tasks-container">
+        <mat-chip-listbox>
+          <mat-chip *ngFor="let task of carePlans; let i = index" [removable]="true" (removed)="removeTask(i)">
+            {{task}}
+            <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip>
+        </mat-chip-listbox>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
