@@ -1,2 +1,109 @@
-<p>galary works!</p>
 
+<div class="card">
+  <body>
+    <h1 class="m-4" class="text-success">Welcome in past galary</h1>
+    <h4 class="ms-4">Galary</h4>
+    <div class="container m-4">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-6 text-center">
+                            <img src="assets/icon-test.png"
+                                class="img-fluid rounded-start"
+                                alt="...">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h5 class="card-title">Patient-1 </h5>
+                                <p class="card-text">
+    A data structure is a storage that is used to store and organize data. 
+                                </p>
+                                <p class="card-text">
+                                  <button  type="button" routerLink="/image" data-mdb-ripple-init class="btn btn-outline-primary ms-1">Show Galary</button>
+                                </p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-6 text-center">
+                            <img src="assets/icon-test.png"
+                                class="img-fluid rounded-start"
+                                alt="...">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h5 class="card-title">Patient-2</h5>
+                                <p class="card-text">
+    Therefore Algorithm refers to a sequence of finite steps to solve a particular problem. 
+                                </p>
+                                <p class="card-text">
+                                  <button  type="button"data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary ms-1">Show Galary</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="col">
+                <div class="card mb-3" style="max-width:540px;">
+                    <div class="row g-0">
+                        <div class="col-md-6 text-center">
+                            <img src="assets/icon-test.png"
+                                class="img-fluid rounded-start"
+                                alt="...">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h5 class="card-title">Patient-3</h5>
+                                <p class="card-text">
+                                    Java is one of the most popular and widely 
+                                    used programming languages. 
+                                </p>
+                                <p class="card-text">
+                                  <button  type="button"data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary ms-1">Show Galary</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3" style="max-width:540px;">
+                    <div class="row g-0">
+                        <!-- <div class="col-md-6 text-center">
+                         
+                        </div> -->
+                        <div class="col-md-9" >
+                            <div class="card-body">
+                              <h2>Please Upload Image</h2>
+                              <form (ngSubmit)="onSubmit()" #imageForm="ngForm">
+                                <div class="form-group">
+                                  <label for="fileInput">Choose Image</label>
+                                  <input
+                                    type="file"
+                                    id="fileInput"
+                                    (change)="onFileSelected($event)"
+                                    class="form-control"
+                                    required
+                                  />
+                                </div>
+                                <button type="submit" class="btn btn-primary mt-2" [disabled]="!selectedFile">Upload</button>
+                              </form>
+                              <div *ngIf="imageUrl" class="mt-4">
+                                <h3>Preview</h3>
+                                <img [src]="imageUrl" alt="Image Preview" class="img-thumbnail" />
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</body>

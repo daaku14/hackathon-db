@@ -1,10 +1,6 @@
 
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { Chart } from 'angular-highcharts';
-import { ChartConfiguration } from 'chart.js';
-import { BaseChartDirective } from 'ng2-charts';
-
-
+import * as Highcharts from 'highcharts';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -12,23 +8,76 @@ import { BaseChartDirective } from 'ng2-charts';
 })
 export class DashboardComponent {
 
-  public barChartLegend = true;
-  public barChartPlugins = [];
-
-  public barChartData: ChartConfiguration<'bar'>['data'] = {
-    labels: [ '2006', '2007', '2008', '2009', '2010', '2011', '2012' ],
-    datasets: [
-      { data: [ 65, 59, 80, 81, 56, 55, 40 ], label: 'Series A' },
-      { data: [ 28, 48, 40, 19, 86, 27, 90 ], label: 'Series B' }
-    ]
+  Highcharts: typeof Highcharts = Highcharts;
+  chartOptions: Highcharts.Options = {
+    chart: {
+      type: 'bar'
+    },
+    title: {
+      text: 'Patient Bar Chart'
+    },
+    xAxis: {
+      categories: ['Episodic memory Test', 'Verbal Fluency Test ', 'Decisioning Test']
+    },
+    yAxis: {
+      title: {
+        text: 'Fruit eaten'
+      }
+    },
+    series: [{
+      type: 'bar',
+      name: 'Jane',
+      data: [1, 0, 4]
+    }, {
+      type: 'bar',
+      name: 'John',
+      data: [5, 7, 3]
+    }]
+  };
+  
+  
+  chartOptionsarea: Highcharts.Options = {
+    chart: {
+      type: 'area'
+    },
+    title: {
+      text: 'Patient Area Chart'
+    },
+    xAxis: {
+      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    },
+    series: [{
+      type: 'area',
+      name: 'Tokyo',
+      data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+    }]
   };
 
-  public barChartOptions: ChartConfiguration<'bar'>['options'] = {
-    responsive: false,
+
+  chartOptionspie: Highcharts.Options = {
+    chart: {
+      type: 'pie'
+    },
+    title: {
+      text: 'Patient Pie Chart'
+    },
+    series: [{
+      type: 'pie',
+      name: 'Brands',
+      data: [
+        { name: 'Chrome', y: 61.41 },
+        { name: 'Internet Explorer', y: 11.84 },
+        { name: 'Firefox', y: 10.85 },
+        { name: 'Edge', y: 4.67 },
+        { name: 'Safari', y: 4.18 },
+        { name: 'Other', y: 7.05 }
+      ]
+    }]
   };
 
-  constructor() {
+  constructor() { }
+
+  ngOnInit(): void {
   }
-
 
 }

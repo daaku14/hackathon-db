@@ -25,14 +25,16 @@ import { MedicationManagementComponent } from './medication-management/medicatio
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 import { TrainingsComponent } from './trainings/trainings.component';
 import { GalaryComponent } from './galary/galary.component';
-import { CalanderComponent } from './calander/calander.component';
 import { FlatpickrModule } from 'angularx-flatpickr';
-import { CalendarModule, DateAdapter } from 'angular-calendar';
-import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { AddMedicationComponent } from './add-medication/add-medication.component';
 import { ChartModule, LineSeriesService } from '@syncfusion/ej2-angular-charts';
-import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
-import { NgChartsConfiguration} from 'ng2-charts';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { CalanderComponent } from './calander/calander.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { ImagesComponent } from './images/images.component';
+
 
 
 @NgModule({
@@ -46,13 +48,14 @@ import { NgChartsConfiguration} from 'ng2-charts';
     PatientProfileComponent,
     TrainingsComponent,
     GalaryComponent,
+    AddMedicationComponent,
     CalanderComponent,
-    AddMedicationComponent
-
+    ImagesComponent,
 
   ],
   imports: [
     ChartModule,
+    HighchartsChartModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -71,11 +74,10 @@ import { NgChartsConfiguration} from 'ng2-charts';
     MatSidenavModule,
     MatTableModule,
     MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    FullCalendarModule,
     FlatpickrModule.forRoot(),
-    CalendarModule.forRoot({
-      provide: DateAdapter,
-      useFactory: adapterFactory,
-    }),
 
 
   
